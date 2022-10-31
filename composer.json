@@ -1,0 +1,32 @@
+{
+  "type": "library",
+  "name": "dwolla/dwolla-php-sdk",
+  "version": "2.0.0",
+  "description": "Full-featured PHP SDK for interacting with Dwolla's API",
+  "keywords": [
+    "dwolla"
+  ],
+  "homepage": "https://developers.dwolla.com",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Dwolla\\": "src/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
+    "post-update-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
+    "test-compat": "./vendor/bin/phpcs -p src --standard=PHPCompatibility --runtime-set testVersion"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "require": {
+    "ext-json": "*",
+    "php": "^7.4 || ^8.0",
+    "guzzlehttp/guzzle": "^7.5.0",
+    "json-mapper/json-mapper": "^2.13"
+  },
+  "require-dev": {
+    "phpcompatibility/php-compatibility": "*"
+  }
+}
